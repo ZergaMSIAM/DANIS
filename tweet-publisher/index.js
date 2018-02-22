@@ -33,8 +33,9 @@ TweetPublisher.start = function () {
 	if (!stream) {
 
 		// Connect to stream and filter by a geofence that is the size of the Earth
-		stream = twitter.stream('statuses/filter', { track: 'danone' });
-		// When Tweet is received only process it if it has geo data(,locations: '-180,-90,180,90')
+		stream1 = twitter.stream('statuses/filter', {  locations: '-180,-90,180,90' });
+		stream = stream1.stream('statuses/filter', { track: 'danone'});
+		// When Tweet is received only process it if it has geo data
 		stream.on('tweet', function (tweet) {	
 			// calculate sentiment with "sentiment" module
 			tweet.sentiment = sentiment(tweet.text.toLowerCase());
