@@ -38,7 +38,7 @@ TweetPublisher.start = function () {
 		// When Tweet is received only process it if it has geo data
 		stream.on('tweet', function (tweet) {	
 			// calculate sentiment with "sentiment" module
-			tweet.sentiment = sentiment(tweet.text);
+			tweet.sentiment = sentiment(tweet.text.toLowerCase());
 
 			// save the Tweet so that the very latest Tweet is available and can be published
 			cachedTweet = tweet
