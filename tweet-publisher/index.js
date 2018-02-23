@@ -34,9 +34,9 @@ TweetPublisher.start = function () {
 
 		// Connect to stream and filter by a geofence that is the size of the Earth
 		//stream = twitter.stream('statuses/filter', { track:'trump',languages='en'});
-		//streamer.filter(track=['trump'],languages=['en'],locations=[4.1317,45.3396,5.7135,46.3285])
-		stream = twitter.stream('statuses/filter', {  locations: '-180,-90,180,90' });
-		
+		//streamer.filter(track=['trump'],languages=['en'],locations=[2.224199,48.815573,2.469921,48.902145])
+		//stream = twitter.stream('statuses/filter', {  locations: '-180,-90,180,90' });
+		stream = twitter.stream('statuses/filter', {  locations: '2.224199,48.815573,2.469921,48.902145' });
 		// When Tweet is received only process it if it has geo data
 		stream.on('tweet', function (tweet) {	
 			// calculate sentiment with "sentiment" module
