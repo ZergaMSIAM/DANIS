@@ -36,7 +36,7 @@ TweetPublisher.start = function () {
 		//stream = twitter.stream('statuses/filter', { track:'trump',languages='en'});
 		//streamer.filter(track=['trump'],languages=['en'],locations=[2.224199,48.815573,2.469921,48.902145])
 		//stream = twitter.stream('statuses/filter', {  locations: '-180,-90,180,90' });
-		stream = twitter.stream('statuses/filter', {track:'trump' ,languages:'fr', locations: '-180,-90,180,90' });
+		stream = twitter.stream('statuses/filter', {track:'trump' ,languages:'en', locations: '-180,-90,180,90' });
 		// When Tweet is received only process it if it has geo data
 		stream.on('tweet', function (tweet) {	
 			// calculate sentiment with "sentiment" module
